@@ -126,14 +126,13 @@ https://book.getfoundry.sh/
 
 ```shell
 $ forge build
-content_copy
-download
-Use code with caution.
-Test
+```
+### Test
+
+```shell
 $ forge test
-content_copy
-download
-Use code with caution.
+```
+
 Shell
 Format
 $ forge fmt
