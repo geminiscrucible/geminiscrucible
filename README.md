@@ -1,7 +1,3 @@
-You are absolutely right! I apologize for the error in the "Build" section of the README.md file. It looks like the formatting didn't come through correctly when I provided the updated content.
-
-Here's the corrected "Build" section:
-
 ## Usage
 
 ### Build
