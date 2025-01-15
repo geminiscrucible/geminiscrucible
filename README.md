@@ -1,3 +1,50 @@
+You are absolutely right! I apologize for the error in the "Build" section of the README.md file. It looks like the formatting didn't come through correctly when I provided the updated content.
+
+Here's the corrected "Build" section:
+
+## Usage
+
+### Build
+
+```shell
+$ forge build
+content_copy
+download
+Use code with caution.
+Markdown
+**Explanation of the Correction:**
+
+*   **Indentation:** The original code snippet I provided had extra indentation before the ` ```shell ` and ` ``` ` lines, which caused the markdown parser to interpret it incorrectly. I've removed that extra indentation.
+*   **Backticks:** The three backticks (```) are used to denote code blocks in Markdown. The `shell` after the opening backticks tells the Markdown renderer that this is a shell script, which helps with syntax highlighting.
+
+**How to Fix It:**
+
+1. **Go to your Gemini's Crucible Codespace.**
+2. **Open the `README.md` file.**
+3. **Scroll down to the "Usage" section and find the "Build" subsection.**
+4. **Replace the incorrect code block with the corrected version above.**
+    It should look like this in your editor:
+
+    ```markdown
+    ## Usage
+
+    ### Build
+
+    ```shell
+    $ forge build
+    ```
+    ```
+
+5. **Save the changes** to your `README.md` file.
+6. **Commit and push the changes:**
+    ```bash
+    git add README.md
+    git commit -m "Fix formatting in README Build section"
+    git push
+    ```
+
+**Corrected Readme**
+```markdown
 # Gemini's Crucible
 
 ## The Story of Gemini
@@ -127,4 +174,35 @@ https://book.getfoundry.sh/
 ```shell
 $ forge build
 
+Shell
+Test
 $ forge test
+
+Shell
+Format
+$ forge fmt
+
+Shell
+Gas Snapshots
+$ forge snapshot
+
+Shell
+Anvil
+$ anvil
+
+Shell
+Deploy
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+content_copy
+
+Shell
+Cast
+$ cast <subcommand>
+
+Shell
+Help
+$ forge --help
+$ anvil --help
+$ cast --help
+
+Shell.
