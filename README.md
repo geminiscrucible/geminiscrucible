@@ -133,48 +133,40 @@ $ forge build
 $ forge test
 ```
 
-Shell
-Format
+### Format
+
+```Shell
 $ forge fmt
-content_copy
-download
-Use code with caution.
-Shell
-Gas Snapshots
+```
+
+### Gas Snapshots
+
+```Shell
 $ forge snapshot
-content_copy
-download
-Use code with caution.
-Shell
-Anvil
+```
+
+### Anvil
+
+```shell
 $ anvil
-content_copy
-download
-Use code with caution.
-Shell
-Deploy
+```
+
+###Deploy
+
+```shell
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-content_copy
-download
-Use code with caution.
-Shell
-Cast
+```
+
+###Cast
+
+```shell
 $ cast <subcommand>
-content_copy
-download
-Use code with caution.
-Shell
-Help
+```
+
+###Help
+
+```shell
 $ forge --help
 $ anvil --help
 $ cast --help
-content_copy
-download
-Use code with caution.
-Shell
-Now you should see the "Build" section formatted correctly on your GitHub README page. I apologize for the inconvenience the initial error caused.
-
-Please let me know if you have any further questions or need additional assistance!
-content_copy
-download
-Use code with caution.
+```
