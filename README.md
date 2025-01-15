@@ -124,12 +124,10 @@ https://book.getfoundry.sh/
 
 ### Build
 
-shell 
-$ forge build
-
+```shell $ forge build
 shell
-Test
-$ forge test
+
+### Test
 
 Shell
 Format
