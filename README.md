@@ -124,32 +124,58 @@ https://book.getfoundry.sh/
 
 ### Build
 
-```shell $ forge build
-shell
-
-### Test
-
+```shell
+$ forge build
+content_copy
+download
+Use code with caution.
+Test
+$ forge test
+content_copy
+download
+Use code with caution.
 Shell
 Format
 $ forge fmt
-
+content_copy
+download
+Use code with caution.
 Shell
 Gas Snapshots
 $ forge snapshot
-
+content_copy
+download
+Use code with caution.
 Shell
 Anvil
 $ anvil
-
+content_copy
+download
+Use code with caution.
 Shell
 Deploy
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>.
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+content_copy
+download
+Use code with caution.
 Shell
 Cast
-$ cast <subcommand>.
+$ cast <subcommand>
+content_copy
+download
+Use code with caution.
 Shell
 Help
 $ forge --help
 $ anvil --help
 $ cast --help
+content_copy
+download
+Use code with caution.
 Shell
+Now you should see the "Build" section formatted correctly on your GitHub README page. I apologize for the inconvenience the initial error caused.
+
+Please let me know if you have any further questions or need additional assistance!
+content_copy
+download
+Use code with caution.
