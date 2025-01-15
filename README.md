@@ -124,9 +124,10 @@ https://book.getfoundry.sh/
 
 ### Build
 
-```shell$ forge build shell.
-```
+shell 
+$ forge build
 
+shell
 Test
 $ forge test
 
