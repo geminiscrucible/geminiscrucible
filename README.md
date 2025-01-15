@@ -126,5 +126,5 @@ https://book.getfoundry.sh/
 
 ```shell
 $ forge build
-```shell
+
 $ forge test
