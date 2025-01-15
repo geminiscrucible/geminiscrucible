@@ -128,15 +128,19 @@ https://book.getfoundry.sh/
 $ forge build
 Test
 $ forge test
+
 Shell
 Format
 $ forge fmt
+
 Shell
 Gas Snapshots
 $ forge snapshot
+
 Shell
 Anvil
 $ anvil
+
 Shell
 Deploy
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>.
