@@ -6,6 +6,14 @@ export interface SendMessageOptions {
   maxTokens?: number;
 }
 
+// Interface to enforce the structure of tool calls
+interface ToolCallSchema {
+  name: "approveTransfer" | "rejectTransfer";
+  arguments: {
+    explanation: string;
+  };
+}
+
 export async function sendMessage({
   messages,
   maxTokens = 1000,
@@ -71,33 +79,56 @@ export async function sendMessage({
   console.log("completion");
   console.log(completion.content);
 
+  // Iterate through the content array and enforce tool usage
   for (const content of completion.content) {
-    if (content.type === "tool_use") {
-      type ToolInput = { explanation: string };
-      if (content.name === "approveTransfer") {
-        return {
-          explanation: (content.input as ToolInput).explanation,
-          decision: true,
-        };
+      if (content.type === "tool_use") {
+        // Use the ToolCallSchema for validation
+          const toolUseContent = content as ToolCallSchema;
+
+          // Validate tool name and arguments
+          if (
+              (toolUseContent.name === "approveTransfer" ||
+              toolUseContent.name === "rejectTransfer") &&
+              toolUseContent.arguments &&
+              typeof toolUseContent.arguments.explanation === "string" &&
+              toolUseContent.arguments.explanation.trim() !== ""
+          ) {
+              return {
+                  explanation: toolUseContent.arguments.explanation,
+                  decision: toolUseContent.name === "approveTransfer",
+              };
+          } else {
+              // Invalid tool use, treat as rejection
+              return {
+                  explanation: "Invalid tool use format or missing explanation.",
+                  decision: false,
+              };
+          }
       }
-      return {
-        explanation: (content.input as ToolInput).explanation,
-        decision: false,
-      };
-    }
   }
 
+  // Fallback: Handle cases where no valid tool call is found (treat as rejection)
   try {
     const responseText =
       completion.content[0].type === "text" ? completion.content[0].text : "";
 
     const response = JSON.parse(responseText);
-    return {
-      explanation: response.explanation,
-      decision: response.decision,
-    };
+     // Check if the parsed response has the expected structure
+     if (
+      typeof response === "object" &&
+      response !== null &&
+      "explanation" in response &&
+      typeof response.explanation === "string"
+    ) {
+      return {
+        explanation: response.explanation,
+        decision: false, // Default to false if no tool call
+      };
+    } else {
+      throw new Error("Invalid response structure");
+    }
   } catch (e) {
-    // Fallback if response isn't valid JSON
+    // Fallback if response isn't valid JSON or doesn't have the expected structure
     const fallbackText =
       completion.content[0].type === "text"
         ? completion.content[0].text
